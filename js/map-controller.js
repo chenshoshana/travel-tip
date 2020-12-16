@@ -45,11 +45,11 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
                     placeName,
                     lat: ev.latLng.lat(),
                     lng: ev.latLng.lng()
-
                 }
                 console.log(place)
             })
         })
+
 
 }
 
