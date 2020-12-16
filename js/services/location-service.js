@@ -1,5 +1,6 @@
 export const locationService = {
-    getLocations
+    getLocations,
+    createLocation
 }
 
 
@@ -10,12 +11,12 @@ function getLocations() {
 }
 
 
-function createLocation(userLat, userLng) {
+function createLocation(place) {
     return {
         id: 789456,
-        name: 'as',
-        lat: userLat,
-        lng: userLng,
+        name: place.name,
+        lat: place.lat,
+        lng: place.lng,
         createAt: Date.now()
             // weather and updateAt
     }

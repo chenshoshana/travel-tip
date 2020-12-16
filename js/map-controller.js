@@ -1,4 +1,5 @@
 import { locationService } from './services/location-service.js'
+import { storageService } from './services/storage-service.js'
 
 console.log('locationService', locationService);
 
@@ -41,11 +42,14 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
                 console.log('Map clicked', ev);
                 const placeName = prompt('Place name?')
                 console.log('Map clicked', placeName, ev.latLng.lat(), ev.latLng.lng());
-                var place = {
+                var newPlace = {
                     placeName,
                     lat: ev.latLng.lat(),
                     lng: ev.latLng.lng()
                 }
+                const location = createLocation(newPlace)
+                saveToStorage(KEY, location)
+                console.log();
                 console.log(place)
             })
         })
