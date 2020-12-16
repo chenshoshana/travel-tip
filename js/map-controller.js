@@ -101,3 +101,7 @@ function _connectGoogleApi() {
         elGoogleApi.onerror = () => reject('Google script failed to load')
     })
 }
+
+function onMapClick(lat, lng) {
+    initMap(lat, lng);
+}
