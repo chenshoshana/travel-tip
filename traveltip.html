@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel tip</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h1>trave tip</h1>
+        <div class="nav-right-side">
+            <input type="text" placeholder="Enter Location"></input>
+            <button>go</button>
+            <button>my location</button>
+        </div>
+    </nav>
+
+    <div class="info-container">
+        <div class="location-info">
+            <h2>location:</h2>
+            <p class="location-name">location</p>
+        </div>
+        <button class="copy-location">Copy Location</button>
+    </div>
+
+    <div class="main-container">
+        <div class="left-side">
+            <div class="weather-box">weather-box</div>
+            <div class="location-table">location-table</div>
+        </div>
+        <div id="map" style="width: 400px; height: 400px;"></div>
+    </div>
+    <button class="btn">Click Me</button>
+
+
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHnDwjuGzwR0dHdwimypN4r_iaokuTFds&callback=initMap">
+    </script>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

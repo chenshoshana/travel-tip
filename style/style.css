@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(247, 111, 77);
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+h1 {}
+
+h2 {
+    display: inline;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+}
+.location-info {
+    display: flex
+}
+.copy-location {
+    height: 80px;
+    width: 300px;
+}
+.main-container {
+    display: flex;
+}
+.weather-box {
+    background-color: #fff;
+    height: 200px;
+    width: 350px;
+    margin-bottom: 20px;
+}
+.location-table {
+    background-color: #fff;
+    height: 200px;
+    width: 350px;
+}
