@@ -47,7 +47,6 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
                     placeName,
                     lat: ev.latLng.lat(),
                     lng: ev.latLng.lng()
-
                 }
                 const location = locationService.createLocation(newPlace)
                 console.log(location);
@@ -56,6 +55,7 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
                 console.log(newPlace)
             })
         })
+
 
 }
 
