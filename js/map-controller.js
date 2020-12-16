@@ -6,23 +6,23 @@ var gGoogleMap;
 
 window.onload = () => {
     initMap()
-        .then(() => {
-            addMarker({ lat: 32.0749831, lng: 34.9120554 });
-        })
-        .catch(console.log('INIT MAP ERROR'));
+        // .then(() => {
+        //     addMarker({ lat: 32.0749831, lng: 34.9120554 });
+        // })
+        // .catch(console.log('INIT MAP ERROR'));
 
-    getUserPosition()
-        .then(pos => {
-            console.log('User position is:', pos.coords);
-        })
-        .catch(err => {
-            console.log('err!!!', err);
-        })
+    // getUserPosition()
+    //     .then(pos => {
+    //         console.log('User position is:', pos.coords);
+    //     })
+    //     .catch(err => {
+    //         console.log('err!!!', err);
+    //     })
 
-    document.querySelector('.btn').addEventListener('click', (ev) => {
-        console.log('Aha!', ev.target);
-        panTo(35.6895, 139.6917);
-    })
+    // document.querySelector('.btn').addEventListener('click', (ev) => {
+    //     console.log('Aha!', ev.target);
+    //     // panTo(35.6895, 139.6917);
+    // })
 }
 
 
@@ -39,6 +39,33 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
             console.log('Map!', gGoogleMap);
         })
 }
+
+// function initMap() {
+//     const myLatlng = { lat: -25.363, lng: 131.044 };
+//     const map = new google.maps.Map(document.getElementById("map"), {
+//         zoom: 4,
+//         center: myLatlng,
+//     });
+//     // Create the initial InfoWindow.
+//     let infoWindow = new google.maps.InfoWindow({
+//         content: "Click the map to get Lat/Lng!",
+//         position: myLatlng,
+//     });
+//     infoWindow.open(map);
+//     // Configure the click listener.
+//     map.addListener("click", (mapsMouseEvent) => {
+//         // Close the current InfoWindow.
+//         infoWindow.close();
+//         // Create a new InfoWindow.
+//         infoWindow = new google.maps.InfoWindow({
+//             position: mapsMouseEvent.latLng,
+//         });
+//         infoWindow.setContent(
+//             JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+//         );
+//         infoWindow.open(map);
+//     });
+// }
 
 function addMarker(loc) {
     var marker = new google.maps.Marker({
@@ -63,7 +90,7 @@ function getUserPosition() {
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()
-    const API_KEY = ''; //TODO: Enter your API Key
+    const API_KEY = 'AIzaSyDxF3PsVq2CrRAE2OacQ4US_Ustu1jUGNI';
     var elGoogleApi = document.createElement('script');
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
     elGoogleApi.async = true;
