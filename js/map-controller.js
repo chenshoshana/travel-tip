@@ -3,14 +3,15 @@ import { storageService } from './services/storage-service.js'
 
 console.log('locationService', locationService);
 
+const KEY = 'location';
 var gGoogleMap;
 
 window.onload = () => {
     initMap()
-        // .then(() => {
-        //     addMarker({ lat: 32.0749831, lng: 34.9120554 });
-        // })
-        // .catch(console.log('INIT MAP ERROR'));
+        .then(() => {
+            addMarker({ lat: 32.0749831, lng: 34.9120554 });
+        })
+        .catch(console.log('INIT MAP ERROR'));
 
     // getUserPosition()
     //     .then(pos => {
@@ -48,10 +49,11 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
                     lng: ev.latLng.lng()
 
                 }
-                const location = createLocation(newPlace)
-                saveToStorage(KEY, location)
-                console.log();
-                console.log(place)
+                const location = locationService.createLocation(newPlace)
+                console.log(location);
+                console.log(KEY);
+                storageService.saveToStorage(KEY, location)
+                console.log(newPlace)
             })
         })
 

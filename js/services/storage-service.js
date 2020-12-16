@@ -3,13 +3,12 @@ export const storageService = {
     loadFromStorage
 }
 
-const KEY = 'location'
 
-function saveToStorage(KEY, val) {
-    localStorage.setItem(KEY, JSON.stringify(val))
+function saveToStorage(key, val) {
+    localStorage.setItem(key, JSON.stringify(val))
 }
 
-function loadFromStorage(KEY) {
-    const json = localStorage.getItem(KEY)
+function loadFromStorage(key) {
+    const json = localStorage.getItem(key)
     return JSON.parse(json)
 }

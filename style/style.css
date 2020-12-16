@@ -20,26 +20,42 @@ h2 {
     justify-content: space-between;
 }
 
-
-}
 .location-info {
     display: flex
 }
+
 .copy-location {
     height: 80px;
     width: 300px;
 }
+
 .main-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .weather-box {
     background-color: #fff;
     height: 200px;
     width: 350px;
     margin-bottom: 20px;
 }
+
 .location-table {
     background-color: #fff;
     height: 200px;
     width: 350px;
+}
+
+@media (max-width:800px) {
+    body {
+        background-color: rgb(255, 95, 55);
+    }
+    .main-container {
+        flex-direction: column-reverse;
+    }
+    #map {
+        margin: 14px;
+    }
 }
