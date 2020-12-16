@@ -37,7 +37,20 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
                     zoom: 15
                 })
             console.log('Map!', gGoogleMap);
+            gGoogleMap.addListener('click', (ev) => {
+                console.log('Map clicked', ev);
+                const placeName = prompt('Place name?')
+                console.log('Map clicked', placeName, ev.latLng.lat(), ev.latLng.lng());
+                var place = {
+                    placeName,
+                    lat: ev.latLng.lat(),
+                    lng: ev.latLng.lng()
+
+                }
+                console.log(place)
+            })
         })
+
 }
 
 // function initMap() {
@@ -90,7 +103,7 @@ function getUserPosition() {
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()
-    const API_KEY = 'AIzaSyDxF3PsVq2CrRAE2OacQ4US_Ustu1jUGNI';
+    const API_KEY = 'AIzaSyC06nL5SesCreH9xWoV8kmWu_9VbZvPwzk';
     var elGoogleApi = document.createElement('script');
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
     elGoogleApi.async = true;
@@ -103,5 +116,5 @@ function _connectGoogleApi() {
 }
 
 function onMapClick(lat, lng) {
-    initMap(lat, lng);
+    initMap(lat, lng)
 }
